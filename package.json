@@ -1,15 +1,33 @@
 {
-  "name": "webpack",
+  "name": "webpack-template",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
   "dependencies": {
-    "babel-core": "^6.26.0"
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "node-sass": "^4.5.3",
+    "path": "^0.12.7",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.6.0"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Stygian",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stygian91/webpack-template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stygian91/webpack-template/issues"
+  },
+  "homepage": "https://github.com/stygian91/webpack-template#readme"
 }

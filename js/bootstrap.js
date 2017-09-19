@@ -1,3 +1,5 @@
-var example = () => console.log('Yay, we have ES6 in here.');
+import '../sass/wrapper.scss';
+
+const example = () => console.log('Yay, ES6 is here.');
 
 example();
