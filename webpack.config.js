@@ -1,8 +1,18 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+
+const plugins = [
+    new ExtractTextPlugin('bundle.css')
+];
+
+if (process.env.NODE_ENV === 'production') {
+    plugins.push(new UglifyJSPlugin());
+}
 
 module.exports = {
     entry: [
+        'babel-polyfill',
         './js/bootstrap.js'
     ],
 
@@ -39,7 +49,5 @@ module.exports = {
         ]
     },
 
-    plugins: [
-        new ExtractTextPlugin('bundle.css')
-    ]
+    plugins
 }
