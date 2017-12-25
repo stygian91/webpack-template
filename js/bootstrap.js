@@ -1,5 +1,7 @@
 import '../sass/bootstrap.scss';
 
-const example = () => { console.log('Yay, ES6 is here.'); };
+const obj = { first: 'John', last: 'Doe' };
+const objClone = {...obj};
 
-example();
+console.log('Testing object spread:');
+console.log(obj, objClone);
