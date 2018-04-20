@@ -9,7 +9,9 @@ const plugins = [
 const isDev = process.env.NODE_ENV !== 'production';
 
 if (!isDev) {
-    plugins.push(new UglifyJSPlugin());
+    plugins.push(new UglifyJSPlugin({
+        sourceMap: isDev,
+    }));
 }
 
 const devtool = isDev ? 'eval' : false;
