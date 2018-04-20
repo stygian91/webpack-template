@@ -6,9 +6,13 @@ const plugins = [
     new ExtractTextPlugin('bundle.css')
 ];
 
-if (process.env.NODE_ENV === 'production') {
+const isDev = process.env.NODE_ENV !== 'production';
+
+if (!isDev) {
     plugins.push(new UglifyJSPlugin());
 }
+
+const devtool = isDev ? 'eval' : false;
 
 module.exports = {
     entry: [
@@ -28,7 +32,11 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['stage-3']
+                        presets: ['@babel/preset-env'],
+                        plugins: [
+                            require('@babel/plugin-proposal-object-rest-spread'),
+                            require('@babel/plugin-proposal-class-properties'),
+                        ],
                     }
                 }
             },
@@ -48,5 +56,7 @@ module.exports = {
         ]
     },
 
-    plugins
+    plugins,
+
+    devtool,
 }
