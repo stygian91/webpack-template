@@ -17,6 +17,8 @@ if (!isDev) {
 const devtool = isDev ? 'eval' : false;
 
 module.exports = {
+    mode: isDev ? 'development' : 'production',
+
     entry: [
         'babel-polyfill',
         './js/bootstrap.js'
